@@ -1,13 +1,29 @@
+Bron: http://learn.knockoutjs.com/
+
 Knockout usses a Model-View-ViewModel(MVVM) pattern
 
-Viewmodel: contains scripts
-View: contains html code
+Viewmodel: 				contains scripts
+View: 					contains html code
 
-data-bind: let you associate the viewmodel with the DOM elements
+data-bind: 				let you associate the viewmodel with the DOM elements
 
-observables: 	properties that automatically notify when the value
-				is changed. It updates the view with new data.
+observables: 			properties that automatically notify when the value
+						is changed. It updates the view with new data.
 				
-computed properties: observables that are based on values of other observables
+computed properties: 	observables that are based on values of other observables
 
- 
+						this.fullName = ko.computed(function(){
+							return this.firstName() + " " + this.lastName();
+						}, this);
+
+read/write observable: 	call it as a function 
+
+						this.capitalizeLastName = function(){
+							var currentVal = this.lastName();
+							this.lastName(currentVal.toUpperCase());
+						}
+						
+observable in the view:	observables are written as a function in the view
+
+root prefix:			$root. prefix causes in Knockout to look for a handler on the top-level
+						viewmodel
