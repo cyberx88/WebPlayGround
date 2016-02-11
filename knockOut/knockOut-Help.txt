@@ -10,3 +10,4 @@ observables: 	properties that automatically notify when the value
 				
 computed properties: observables that are based on values of other observables
 
+ 
