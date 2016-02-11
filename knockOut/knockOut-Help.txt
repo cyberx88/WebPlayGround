@@ -1,0 +1,12 @@
+Knockout usses a Model-View-ViewModel(MVVM) pattern
+
+Viewmodel: contains scripts
+View: contains html code
+
+data-bind: let you associate the viewmodel with the DOM elements
+
+observables: 	properties that automatically notify when the value
+				is changed. It updates the view with new data.
+				
+computed properties: observables that are based on values of other observables
+
