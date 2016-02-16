@@ -4,8 +4,8 @@ Knockout usses a Model-View-ViewModel(MVVM) pattern
 M (Model):				the DOM, represents content
 V (View):				the user-interface (html)
 VM(ViewModel):			describes the state of the data in de model
-Binder:					the binder mediates communication between the view and the 
-						data-binder.  
+Binder:					Bindings notice viewmodel changes and correspondingly update the view's DOM
+						Bindings catch DOM events and correspondingly update viewmodel properties
 
 Viewmodel: 				contains scripts
 View: 					contains html code
@@ -43,3 +43,12 @@ pushState:				is an HTML5 API that offers a different way to change the
 						
 $data:					is a built-in variable used to refer to the current object being
 						bound.
+						
+custom binders:			create a new property to the ko.bindingHandlers object. It can expose two callbacks:
+						init, called when the binding first happens 
+						update, called when the associated data updates 
+						
+						ko.bindingHandlers.[propertyName] = {
+							init:[init code]
+							update:[update code]						
+						}
