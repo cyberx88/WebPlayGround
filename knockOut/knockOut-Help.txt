@@ -1,11 +1,16 @@
 Bron: http://learn.knockoutjs.com/
 
 Knockout usses a Model-View-ViewModel(MVVM) pattern
+M (Model):				the DOM, represents content
+V (View):				the user-interface (html)
+VM(ViewModel):			describes the state of the data in de model
+Binder:					Bindings notice viewmodel changes and correspondingly update the view's DOM
+						Bindings catch DOM events and correspondingly update viewmodel properties
 
 Viewmodel: 				contains scripts
 View: 					contains html code
 
-data-bind: 				let you associate the viewmodel with the DOM elements
+data-bind: 				let you associate the VM with the DOM elements
 
 observables: 			properties that automatically notify when the value
 						is changed. It updates the view with new data.
@@ -25,5 +30,25 @@ read/write observable: 	call it as a function
 						
 observable in the view:	observables are written as a function in the view
 
-root prefix:			$root. prefix causes in Knockout to look for a handler on the top-level
-						viewmodel
+root prefix:			$root. prefix causes in Knockout to look for a handler on
+						the top-level VM (function)
+						
+hash-based navigation: 	visitors position in the page is stored in the URL after
+						"hash" tag (/my/app/#category=shoes&page=4). When the URL
+						change, it won't use a HTTP request which triggers a load 
+						
+pushState:				is an HTML5 API that offers a different way to change the
+						current URL, and thereby insert new back/forward history entries, without triggering a page load. 
+						This differs from hash-based navigation in that you're not limited to updating the hash fragment — you can update the entire URL
+						
+$data:					is a built-in variable used to refer to the current object being
+						bound.
+						
+custom binders:			create a new property to the ko.bindingHandlers object. It can expose two callbacks:
+						init, called when the binding first happens 
+						update, called when the associated data updates 
+						
+						ko.bindingHandlers.[propertyName] = {
+							init:[init code]
+							update:[update code]						
+						}
