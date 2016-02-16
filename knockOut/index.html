@@ -1,0 +1,37 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>WebPlayGround - Knockout</title>
+  <meta name="description" content="WebPlayGround - Knockout">
+  <meta name="author" content="Dave">
+
+  <link rel="stylesheet" href="css/style.css">
+
+  <!--[if lt IE 9]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+</head> 
+
+<body>
+	<script type='text/javascript' src="js/knockout-3.4.0.js"></script>
+	<script type='text/javascript' src="js/jquery-1.12.0.js"></script>
+	
+	
+	
+	<!-- View -->
+	<h1>Contesters of the Tournament</h1>
+	<table>
+	<tr>
+		<td><span data-bind="html: contenderId"></span></td>
+		<td><input data-bind="value: firstName"></input></td>
+		<td><input data-bind="value: lastName"></input></td>
+	</tr>
+	</table>
+	
+	<!-- End View -->
+	<script src="js/viewmodel.js"></script>
+</body>
+</html>
